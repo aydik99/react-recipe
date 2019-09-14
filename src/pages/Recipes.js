@@ -6,11 +6,27 @@ import {recipeData} from '../data/tempList'
 export default class Recipes extends Component {
     constructor(props) {
         super(props)
+        this.getRecipes = this.getRecipes.bind(this)
     }
 
     state = {
         recipes: recipeData,
-        search: ''
+        search: '',
+        url:  `https://www.food2fork.com/api/search?key=${
+            process.env.REACT_APP_API_KEY
+        }`
+    }
+
+    async getRecipes() {
+        try {
+
+        } catch(error) {
+            console.log(error)
+        }
+    }
+
+    componentDidMount() {
+
     }
 
     handleChange = (e) => {
